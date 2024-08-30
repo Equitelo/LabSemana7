@@ -12,6 +12,8 @@ public class LaraSamuelXO extends javax.swing.JFrame {
     String nombreO = JOptionPane.showInputDialog("player O: ");
     JLabel tablero[][]=new JLabel[3][3];
     String ronda="X";
+    int contador=0;
+    String ganador="";
     public LaraSamuelXO() {
         initComponents();
         //filas 0
@@ -251,6 +253,9 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         if((filas<0||filas>2)||(columnas<0||columnas>2)){
             JOptionPane.showMessageDialog(null, "No se puede colocar ahi");
         }
+        if(txtFilas==null||txtColumnas==null){
+            JOptionPane.showMessageDialog(null, "Ingrese un valor");
+        }
         //si es distinto a vacio
         if ( ! tablero[filas][columnas].getText().equals("")) {
             txtFilas.setText("");
@@ -262,7 +267,10 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         ronda = (ronda.equals("X"))?"O":"X";
         txtFilas.setText("");
         txtColumnas.setText("");
-        
+        contador++;
+        if(contador==9){
+            JOptionPane.showMessageDialog(null, "EMPATE");
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
