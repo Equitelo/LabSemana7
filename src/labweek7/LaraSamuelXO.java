@@ -29,15 +29,10 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         tablero[2][1]=caja2_1;
         tablero[2][2]=caja2_2;
         
-        labelX.setText("Jugador X: "+nombreX);
-        labelO.setText("Jugador O: "+nombreO);
+        labelX.setText("X: "+nombreX);
+        labelO.setText("O: "+nombreO);
     }
-//    boolean colocar(){
-//        if(){
-//        
-//        }
-//        return false;
-//    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -253,7 +248,7 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         if((filas<0||filas>2)||(columnas<0||columnas>2)){
             JOptionPane.showMessageDialog(null, "No se puede colocar ahi");
         }
-        if(txtFilas==null||txtColumnas==null){
+        if(txtFilas.equals("")||txtColumnas.equals("")){
             JOptionPane.showMessageDialog(null, "Ingrese un valor");
         }
         //si es distinto a vacio
@@ -270,6 +265,7 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         contador++;
         if(contador==9){
             JOptionPane.showMessageDialog(null, "EMPATE");
+            this.dispose();
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
