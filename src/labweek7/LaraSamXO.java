@@ -5,8 +5,10 @@ package labweek7;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class LaraSamuelXO extends javax.swing.JFrame {
-    String nombreX = JOptionPane.showInputDialog("player X: ");
+public class LaraSamXO extends javax.swing.JFrame {
+    adminUsrs s;
+    private String usuario;
+    String nombreX = usuario;
     String nombreO = JOptionPane.showInputDialog("player O: ");
     JLabel tablero[][]=new JLabel[3][3];
     String ronda="X";
@@ -14,7 +16,7 @@ public class LaraSamuelXO extends javax.swing.JFrame {
     String ganador="X";
     int filas;
     int columnas;
-    public LaraSamuelXO() {
+    public LaraSamXO(adminUsrs s) {
         initComponents();
         //filas 0
         tablero[0][0]=caja0_0;
@@ -28,9 +30,7 @@ public class LaraSamuelXO extends javax.swing.JFrame {
         tablero[2][0]=caja2_0;
         tablero[2][1]=caja2_1;
         tablero[2][2]=caja2_2;
-        
-        labelX.setText("X: "+nombreX);
-        labelO.setText("O: "+nombreO);
+        this.s=s;
     }
     
     boolean respuestas(){
@@ -330,41 +330,46 @@ public class LaraSamuelXO extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
-
+    
+    public void setlblUser(String usuario){
+        this.usuario=usuario;
+        labelX.setText(usuario);
+    }
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LaraSamuelXO().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(LaraSamuelXO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new LaraSamuelXO().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
